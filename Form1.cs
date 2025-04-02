@@ -12,6 +12,7 @@ namespace GridView
 {
     public partial class Form1 : Form
     {
+        Acciones blep = new Acciones();
         public Form1()
         {
             InitializeComponent();
@@ -24,8 +25,45 @@ namespace GridView
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Acciones blep = new Acciones();
+            Bleeh.DataSource = null;
             Bleeh.DataSource = blep.MostrarPokemon();
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (blep.EliminarPokemon(textBox1.Text))
+                MessageBox.Show("Eliminado con exito");
+            else
+                MessageBox.Show("MissingNo");
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Agregarbtn_Click(object sender, EventArgs e)
+        {
+            if (blep.AgregarPokemon(a.Text, b.Text, c.Text, d.Text, f.Text))
+                MessageBox.Show("Agregado con exito");
+            else
+                MessageBox.Show("MissingNo");
         }
     }
 }
